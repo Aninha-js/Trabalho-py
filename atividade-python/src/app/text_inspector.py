@@ -3,15 +3,15 @@ from typing import List
 
 class TextInspector:
     """
-    Classe responsável por ler, inspecionar e manipular o conteúdo de um arquivo de texto
-    utilizando expressões regulares. Oferece funções como extração de palavras, substituição
-    de vírgulas, reconhecimento de datas e ocultação de informações sensíveis como e-mails,
-    CPFs e telefones.
+    Classe responsável por ler, inspecionar e manipular o conteúdo de texto
+    utilizando expressões regulares. Oferece funções como extração de palavras,
+    substituição de vírgulas, reconhecimento de datas e ocultação de conteudo
+    sensíveis.
     """
 
     def __init__(self, filepath: str):
         """
-        Inicializa a classe com o caminho do arquivo e carrega o conteúdo do texto.
+        Inicializa a classe com o caminho do arquivo e carrega o conteúdo.
 
         :param filepath: Caminho para o arquivo .txt que será inspecionado.
         """
@@ -29,7 +29,7 @@ class TextInspector:
 
     def palavras_comecam_com(self, letra: str) -> List[str]:
         """
-        Retorna todas as palavras do texto que começam com uma letra específica.
+        Retorna todas as palavras do texto que começam com uma letra escolhida.
 
         :param letra: Letra inicial a ser procurada.
         :return: Lista de palavras encontradas.
@@ -63,7 +63,7 @@ class TextInspector:
 
     def ocultar_info_sensivel(self) -> str:
         """
-        Substitui dados sensíveis (e-mails, CPFs e telefones) por marcadores seguros.
+        Substitui dados sensíveis (e-mails, CPFs e telefones) por marcadores.
 
         :return: Texto com as informações sensíveis ocultadas.
         """
@@ -79,4 +79,4 @@ class TextInspector:
 
         :return: Quantidade de palavras.
         """
-        return len(re.findall(r'\b\w+\b', self.text)) 
+        return len(re.findall(r'\b\w+\b', self.text))
